@@ -54,9 +54,9 @@ export default function Home() {
     <div>
 
       <section id="intro">
-        <NavigationMenu className="flex items-center flex-row h-15 fixed bg-white">
+        <NavigationMenu className="flex items-center flex-row h-15 fixed w-screen bg-white">
           <NavigationMenuList>
-            <NavigationMenuItem className=" ml-40 ">
+            <NavigationMenuItem className="ml-5 md:ml-40">
               <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                 <Button onClick={()=>scrollToSection("intro")} className="bg-transparent hover:bg-transparent focus:bg-tranparent">
                   <div className = "text-[15px] flex flex-row">
@@ -68,7 +68,7 @@ export default function Home() {
                 </Button>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem className="ml-75">
+            <NavigationMenuItem className="hidden md:block ml-75">
               <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                 <Button onClick={()=>scrollToSection("packages")} className="bg-transparent hover:bg-transparent focus:bg-tranparent">
                   <div className = "text-[14px] flex flex-row">
@@ -78,7 +78,7 @@ export default function Home() {
                 </Button>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem className="ml-4">
+            <NavigationMenuItem className="hidden md:block ml-4">
               <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                 <Button onClick={()=>scrollToSection("how it works")} className="bg-transparent hover:bg-transparent focus:bg-tranparent">
                   <div className = "text-[14px] flex flex-row">
@@ -88,27 +88,40 @@ export default function Home() {
                 </Button>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem className="ml-80">
+            <NavigationMenuItem className="ml-7 md:ml-80">
                   <GetStarted/>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
         <Separator orientation="horizontal"/>
-        <div className="flex flex-col mt-40 ml-40 ">
+        <div className="flex flex-col mt-40 ml-10 md:ml-40 ">
           <div className="font-serif gap-5 text-6xl font-extrabold">
-            <h1 className="">
+            <h1 className="md:block hidden">
               Website Creation,
             </h1>
-            <h1 className="mt-2">
+            <h1 className="mt-2 hidden md:block">
               <TypingAnimation words={["With a Flat Charge For Everyone.", "No Hidden Fees.", "No Consulting Fees."]} 
               loop 
               typeSpeed={70}
               deleteSpeed={40}
               pauseDelay={1500}
               />
+              
             </h1>
+              <h1
+                className="gap-5 md:hidden text-6xl font-extrabold"
+                
+              >
+                Website Creation,
+              </h1>
+              <h1
+                className="gap-5  md:hidden text-6xl font-extrabold"
+              >
+                Made Easy.
+              </h1>
+
           </div>
-          <p className="font-mono text-lg w-160 font-light pt-5">
+          <p className="font-mono text-lg w-90 md:w-160 font-light pt-5">
             One flat initial fee starting at $300, then a service fee starting at $40 per month to keep it running, secure, and updated. No additional charges. No hidden fees. Straight to the point.
           </p>
           <div className="flex flex-row font-mono mt-5">
@@ -118,33 +131,34 @@ export default function Home() {
               <ArrowRight/>
             </Button>
           </div>
+          
         </div>
       </section>
       <section id="packages" className="mt-30">
         <Separator orientation="horizontal"/>
-        <div className="flex flex-col mt-20 ml-40 ">
+        <div className="flex flex-col mt-20 ml-5 md:ml-40 ">
           <div className="font-serif gap-5 text-5xl font-extrabold">
-            <h1 className="">
+            <h1 className="mb-5">
               Packages
             </h1>
-            <div className="flex flex-row gap-5">
-              <Card className="w-150 h-120 mt-5 mb-10">
+            <div className="flex flex-col md:flex-row gap-5">
+              <Card className="w-100 md:w-150 h-120 md:mt-5 mb-3 md:mb-10">
                 <CardHeader>
                   <CardTitle className="text-2xl font-semibold">Complete Package</CardTitle>
                   <CardDescription>All Setup Covered</CardDescription>
-                  <CardAction className="bg-black text-white p-2 rounded-md">All-Inclusive!</CardAction>
+                  <CardAction className=" bg-black text-white p-2 rounded-md">All-Inclusive!</CardAction>
                 </CardHeader>
                 <CardContent className="font-normal">
-                  <div className="flex flex-col ml-10 text-4xl">
+                  <div className="flex flex-col ml-10 text-2xl md:text-4xl">
                       <div className="flex flex-row">
-                        <p className="ml-1">Inital</p>
-                        <p className="ml-15">Service</p>
-                        <p className="ml-15">Seasonal</p>
+                        <p className="md:ml-1">Inital</p>
+                        <p className="ml-5 md:ml-15">Service</p>
+                        <p className="ml-5 md:ml-15">Seasonal</p>
                       </div>
                       <div className="flex flex-row">
-                        <p>$500</p>
-                        <p className="ml-20">$75</p>
-                        <p className="ml-30" >$100</p>
+                        <p className="">$500</p>
+                        <p className="ml-9 md:ml-20">$75</p>
+                        <p className="ml-12 md:ml-30" >$100</p>
                       </div>
                   </div>
                   <Separator orientation="horizontal" className="mt-5"/>
@@ -158,23 +172,23 @@ export default function Home() {
                 </CardContent>
               </Card>
               
-              <Card className="w-150 h-120 mt-5 mb-10">
+              <Card className="w-100 md:w-150 md:mt-5 mb-3 md:mb-10">
                 <CardHeader>
                   <CardTitle className="text-2xl font-semibold">Basic Package</CardTitle>
-                  <CardDescription>Most Needed Things Covered</CardDescription>
-                  <CardAction className="bg-black text-white p-2 rounded-md">Semi-Inclusize!</CardAction>
+                  <CardDescription>Most Needed Setup Covered</CardDescription>
+                  <CardAction className=" bg-black text-white p-2 rounded-md">Semi-Inclusive!</CardAction>
                 </CardHeader>
                 <CardContent className="font-normal">
-                  <div className="flex flex-col ml-10 text-4xl">
+                  <div className="flex flex-col ml-10 text-2xl md:text-4xl">
                       <div className="flex flex-row">
-                        <p className="ml-1">Inital</p>
-                        <p className="ml-15">Service</p>
-                        <p className="ml-15">Seasonal</p>
+                        <p className="md:ml-1">Inital</p>
+                        <p className="ml-5 md:ml-15">Service</p>
+                        <p className="ml-5 md:ml-15">Seasonal</p>
                       </div>
                       <div className="flex flex-row">
-                        <p>$300</p>
-                        <p className="ml-20">$40</p>
-                        <p className="ml-30" >$75</p>
+                        <p className="">$300</p>
+                        <p className="ml-9 md:ml-20">$40</p>
+                        <p className="ml-12 md:ml-30" >$75</p>
                       </div>
                   </div>
                   <Separator orientation="horizontal" className="mt-5"/>
@@ -184,23 +198,25 @@ export default function Home() {
                         {el}
                     </div>
                   ))}
-                  <div className="mt-15"><GetStarted/></div>
+                  <div className="mt-7"><GetStarted/></div>
                 </CardContent>
               </Card>
+              
+              
             </div>
           </div>
         </div>
       </section>
       <section id="how it works">
         <Separator orientation="horizontal" className="mt-5"/>
-        <div className="flex mt-40 ml-40 ">
-          <div className="flex items-center flex-row font-serif gap-5 mb-10 text-5xl font-extrabold">
+        <div className="flex mt-40 ml-5 md:ml-40 ">
+          <div className="flex md:items-center flex-col md:flex-row font-serif gap-5 mb-10 text-5xl font-extrabold">
             <h1 className="">
               How It Works
             </h1>
             <Accordion
               type="multiple"
-              className=" w-200 ml-40 font-mono"
+              className="w- 70 md:w-200 md:ml-40 font-mono"
                 >
               {HowItWorks.map((item) => (
                 <AccordionItem key={item.value} value={item.value}>
@@ -214,7 +230,7 @@ export default function Home() {
       </section>
       <section id="footer">
         <Separator orientation="horizontal" className="mt-5"/>
-        <div className = "text-[15px] mt-10 ml-30 flex flex-row">
+        <div className = "text-[15px] mt-10 md:ml-30 ml-10 flex flex-row">
             
           <Square className="size-2.75 mt-1.25 mr-2 rounded-md fill-black"/>
           <p className="font-bold text-black">Cybercreation Studios</p>
@@ -224,7 +240,7 @@ export default function Home() {
         </div>
         <div className="p-15 ">
           <Separator orientation="horizontal" className="mt-5"/>
-          <div className="text-xs flex flex-row gap-2 ml-10 mt-10">
+          <div className="text-xs flex flex-row gap-2 md:ml-10 mt-10">
             <Copyright size={10} className="mt-0.75"/> 
             2026 Cybercreation Studios. All rights reserved.
           </div>
